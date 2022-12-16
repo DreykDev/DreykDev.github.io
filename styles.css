@@ -1,0 +1,122 @@
+/*DEFAULT*/
+:root{
+  --white: #fdfffc;
+  --black: #000000;
+  --red: #8d0801;
+  --red-menu: #3C0000;
+  --grey: #313131;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html{
+  font-size: 62.5%;
+  font-family: sans-serif;
+  background-color: var(--black);
+  overflow-x: hidden;
+}
+body{
+    overflow-x: hidden;
+}
+
+/*header*/
+header{
+  width: 100vw;
+  height: auto;
+  background-color: var(--black);
+  display: flex;
+  justify-content:space-between;
+  position: fixed;
+  z-index: 1;
+}
+.header--list{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 25px;
+  transition: all 0.6s ease;
+  position: relative;
+  top: 55px;
+  background-color: var(--black);
+  width: 100vw;
+}
+.one{
+  clip-path: inset(0 0 100% 0);
+}
+.two{
+  clip-path: inset(0 0 0% 0);
+}
+.header--list li a{
+  font-weight: bold;
+  font-size: 1.8rem;
+  text-decoration: none;
+  color:var(--white);
+}
+/*Animacion de linea bottom header*/
+.header--list li a::before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+.header--list li a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.header--list li a::before {
+  content: " ";
+  display: block;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: red;
+  z-index: 2;
+  transition: transform .3s ease;
+  border-radius: 20px;
+  height: 2px;
+  position: relative;
+  top: 21px;
+}
+.header--list li a {
+  position: relative;
+}
+.iconMenu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--red);
+  background-color: transparent;
+  height: 55px;
+  padding: 0 8px;
+  z-index: 3;
+  cursor: pointer;
+}
+.iconMenu span{
+  font-size: 30px;
+}
+
+/*MAIN*/
+main{
+  padding: 0 15px 0 15px;
+}
+.container--tittle{
+  padding-top: 170px
+}
+.tittle{
+color: var(--white);
+font-size: 9.6rem;
+}
+.second-tittle{
+color: var(--red);
+font-size: 6.4rem;
+}
+.container--me{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('./asets/me.jpeg');
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  background-position: 100px 220px;
+  z-index: -1;
+}
